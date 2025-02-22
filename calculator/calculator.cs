@@ -18,7 +18,7 @@ namespace project
             {
                 Console.Write("Enter number: ");
                 string input = Console.ReadLine();
-                if (input.ToLower() == "=") break;
+                if (input == "=") break;
                 if (double.TryParse(input, out double number))
                     numbers.Add(number);
                 else
