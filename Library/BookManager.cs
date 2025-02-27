@@ -89,14 +89,10 @@ namespace Library
                 string jsonString = File.ReadAllText(filePath);
                 books = JsonSerializer.Deserialize<List<Book>>(jsonString) ?? new List<Book>();
             }
-            catch (JsonException)
-            {
-                Console.WriteLine("Error: Corrupt or invalid JSON file. Resetting book list.");
-                books = new List<Book>();
-            }
+            
             catch (Exception ex)
             {
-                Console.WriteLine($"Unexpected error loading books: {ex.Message}");
+                Console.WriteLine($"error loading books: {ex.Message}");
                 books = new List<Book>();
             }
         }
